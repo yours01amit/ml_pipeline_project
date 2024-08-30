@@ -11,7 +11,7 @@ from dataclasses import dataclass
 
 from src.logger import logging
 from src.exception import CustomException
-from src.utils import save_obj
+from src.utils import save_object
 
 @dataclass
 class DataTransformationConfig:
@@ -110,7 +110,7 @@ class DataTransformation:
             train_array = np.c_[input_train_arr, np.array(target_feature_train_data)]
             test_array = np.c_[input_test_arr, np.array(target_feature_test_data)]
 
-            save_obj(file_path=self.data_transformation_config.preprocessor_obj_file_path,
+            save_object(file_path=self.data_transformation_config.preprocessor_obj_file_path,
                      obj=preprocessor_obj)
             
             return(
